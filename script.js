@@ -1,6 +1,6 @@
 /* =============================================
    PORTFOLIO JAVASCRIPT
-   Abdelrahman Shoman - AI Specialist & Data Analyst
+   Abdelrahman Shoman - AI Engineer & Data Analyst
    ============================================= */
 
 // ==========================================
@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typewriterEl = document.getElementById('typewriter');
     if (typewriterEl) {
         new TypeWriter(typewriterEl, [
-            'AI Specialist',
+            'AI Engineer',
             'Data Analyst',
             'ML Engineer',
             'Computer Vision Developer',

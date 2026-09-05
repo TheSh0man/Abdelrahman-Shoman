@@ -823,11 +823,7 @@ ul {
 }
 
 .skill-category {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--gray-100);
+    margin-bottom: 24px;
 }
 
 .category-title {
