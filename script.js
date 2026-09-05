@@ -440,4 +440,87 @@ document.addEventListener('DOMContentLoaded', () => {
     createParticles();
     initSmoothReveal();
     initTiltEffect();
+
+    // Modal close listeners
+    const modal = document.getElementById('projectModal');
+    const closeBtn = document.getElementById('closeModalBtn');
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeProjectModal);
+    }
+    
+    if (modal) {
+        // Close when clicking outside the content
+        modal.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-backdrop') || e.target === modal) {
+                closeProjectModal();
+            }
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+            closeProjectModal();
+        }
+    });
 });
+
+// ==========================================
+// 11. PROJECT MODAL
+// ==========================================
+function openProjectModal(cardElement) {
+    const modal = document.getElementById('projectModal');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalTech = document.getElementById('modalTech');
+    const modalGallery = document.getElementById('modalGallery');
+    const modalDescription = document.getElementById('modalDescription');
+
+    // Extract basic data from the card
+    const category = cardElement.querySelector('.project-category').textContent;
+    const title = cardElement.querySelector('.project-title').textContent;
+    const techHTML = cardElement.querySelector('.project-tech').innerHTML;
+
+    // Extract hidden details content
+    const detailsContent = cardElement.querySelector('.project-details-content');
+    
+    // Populate modal
+    modalCategory.textContent = category;
+    modalTitle.textContent = title;
+    modalTech.innerHTML = techHTML;
+    
+    if (detailsContent) {
+        const images = detailsContent.querySelector('.modal-images').innerHTML;
+        const desc = detailsContent.querySelector('.modal-long-desc').innerHTML;
+        
+        modalGallery.innerHTML = images;
+        modalDescription.innerHTML = desc;
+    } else {
+        // Fallback for projects that don't have detailed content yet
+        const img = cardElement.querySelector('.project-image img').cloneNode(true);
+        modalGallery.innerHTML = '';
+        modalGallery.appendChild(img);
+        
+        const shortDesc = cardElement.querySelector('.project-desc').textContent;
+        modalDescription.innerHTML = `<p>${shortDesc}</p>`;
+    }
+
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Clear content after animation to prevent flashing old content on next open
+        setTimeout(() => {
+            document.getElementById('modalGallery').innerHTML = '';
+            document.getElementById('modalDescription').innerHTML = '';
+        }, 300);
+    }
+}

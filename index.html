@@ -388,11 +388,11 @@
 
             <div class="projects-grid" id="projectsGrid">
                 <!-- Project 1: Excel Data Analysis -->
-                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="100" onclick="openProjectModal(this)">
                     <div class="project-image">
                         <img src="assets/excel-project.png" alt="Excel Sales Dashboard">
                         <div class="project-overlay">
-                            <a href="https://www.linkedin.com/posts/abdalrahmanshoman_dataanalysis-excel-creativa-activity-7364275063874801665-VVTm" target="_blank" class="project-link" title="View on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <span class="project-link" title="View Details"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="project-info">
@@ -404,6 +404,60 @@
                             <span>Data Cleaning</span>
                             <span>Pivot Tables</span>
                             <span>Dashboarding</span>
+                        </div>
+                    </div>
+                    
+                    <!-- HIDDEN DETAILS FOR MODAL -->
+                    <div class="project-details-content" style="display: none;">
+                        <div class="modal-images">
+                            <img src="assets/excel-project.png" alt="Dashboard Main">
+                            <img src="assets/excel-1.png" alt="Dashboard Screenshot 1">
+                            <img src="assets/excel-2.png" alt="Dashboard Screenshot 2">
+                            <img src="assets/excel-3.png" alt="Dashboard Screenshot 3">
+                            <img src="assets/excel-4.png" alt="Dashboard Screenshot 4">
+                            <img src="assets/excel-5.png" alt="Dashboard Screenshot 5">
+                            <img src="assets/excel-6.png" alt="Dashboard Screenshot 6">
+                            <img src="assets/excel-7.png" alt="Dashboard Screenshot 7">
+                        </div>
+                        <div class="modal-long-desc">
+                            <p>I'm really excited to share my first Data Analysis project using Excel 🎉</p>
+                            <p>What makes me most excited is that I was able to work on this project from scratch – starting with raw data and shaping it into a complete interactive dashboard.</p>
+                            
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>The dashboard was designed with both <strong>Dark Mode and Light Mode</strong> to give a better user experience.</li>
+                                <li><strong>Interactive filters</strong> that allow you to drill down into the data: By Months, By Years (2016 – 2017), and By Categories (Accessories, Bikes, Clothing, Components).</li>
+                            </ul>
+
+                            <h4>Main Phases of the Project</h4>
+                            
+                            <p><strong>✅ Asking Business Questions</strong></p>
+                            <ul>
+                                <li>Which months achieved the highest sales?</li>
+                                <li>Who are the top customers?</li>
+                                <li>What are the best-selling products?</li>
+                                <li>Which regions performed better?</li>
+                                <li>How did discounts change across months?</li>
+                            </ul>
+                            
+                            <p><strong>✅ Data Cleaning</strong></p>
+                            <ul>
+                                <li>Handling missing values & removing duplicates</li>
+                                <li>Fixing inconsistent data formats (dates, text, numbers)</li>
+                                <li>Preparing and restructuring the dataset to be analysis-ready</li>
+                            </ul>
+                            
+                            <p><strong>✅ Data Analysis (Pivot Tables)</strong></p>
+                            <p>Creating multiple Pivot Tables to answer the business questions and uncover insights.</p>
+                            
+                            <p><strong>✅ Visualization (Dashboard Design)</strong></p>
+                            <p>Creating an interactive and user-friendly dashboard that included multiple charts and visuals, with a clean design to clearly present the insights.</p>
+                            
+                            <p><em>This project was part of the Creativa Innovation Hub - Mansoura, under the supervision of Eng. MOHAMMAD YASSER. A big thanks to my teammates (ELEVATE Team): Abood Alsayeed, Ahmed Satour and Aya Elsaeed.</em></p>
+                            
+                            <div class="modal-external-links" style="margin-top: 24px;">
+                                <a href="https://www.linkedin.com/posts/abdalrahmanshoman_dataanalysis-excel-creativa-activity-7364275063874801665-VVTm" target="_blank" class="btn primary-btn" onclick="event.stopPropagation();"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -598,6 +652,32 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- PROJECT DETAILS MODAL -->
+    <div id="projectModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <span class="modal-category" id="modalCategory">Category</span>
+                <h2 class="modal-title" id="modalTitle">Project Title</h2>
+                <div class="project-tech" id="modalTech">
+                    <!-- Tech badges injected here -->
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- Gallery -->
+                <div class="modal-gallery" id="modalGallery">
+                    <!-- Images injected here -->
+                </div>
+                
+                <!-- Description -->
+                <div class="modal-description" id="modalDescription">
+                    <!-- Content injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
