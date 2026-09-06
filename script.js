@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Data Analyst',
             'ML Engineer',
             'Computer Vision Developer',
-            'NLP Enthusiast',
+            'Flutter Developer',
             'Problem Solver'
         ], 2000);
     }
