@@ -387,6 +387,53 @@
             </div>
 
             <div class="projects-grid" id="projectsGrid">
+                <!-- Project 0: Dimension X -->
+                <div class="project-card" data-category="cv" data-aos="fade-up" data-aos-delay="100" onclick="openProjectModal(this)">
+                    <div class="project-image">
+                        <img src="assets/dimensionx-1.png" alt="Dimension X System">
+                        <div class="project-overlay">
+                            <span class="project-link" title="View Details"><i class="fas fa-search-plus"></i></span>
+                            <a href="https://github.com/TheSh0man/Dimension-X" target="_blank" class="project-link" title="View Code" onclick="event.stopPropagation();"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Computer Vision</span>
+                        <h3 class="project-title">Dimension X: Logistics AI</h3>
+                        <p class="project-desc">Fully autonomous logistics platform calculating box dimensions and packing capacity using a custom YOLOv8 model.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>YOLOv8</span>
+                            <span>OpenCV</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                    
+                    <!-- HIDDEN DETAILS FOR MODAL -->
+                    <div class="project-details-content" style="display: none;">
+                        <div class="modal-images">
+                            <img src="assets/dimensionx-1.png" alt="Dashboard Main">
+                            <img src="assets/dimensionx-2.png" alt="Dashboard View 2">
+                            <img src="assets/dimensionx-3.png" alt="Dashboard View 3">
+                        </div>
+                        <div class="modal-long-desc">
+                            <p>Dimension X is a fully autonomous, computer-vision-based logistics platform designed to replace inaccurate manual measurements with high-precision AI calculations. It calculates physical dimensions, optimizes packing capacity, and performs intelligent weight-splitting in real-time.</p>
+                            
+                            <h4>Technical Architecture</h4>
+                            <ul>
+                                <li><strong>Custom YOLOv8:</strong> Uses advanced CNNs to accurately detect boundaries and corners of boxes, even when partially obscured.</li>
+                                <li><strong>ArUco Marker Calibration:</strong> Establishes a precise pixel-to-metric ratio.</li>
+                                <li><strong>Multi-Modal API Integration:</strong> Integrates Cloud Vision APIs (LLaVA / Gemini) to identify the contents of the boxes semantically.</li>
+                            </ul>
+                            
+                            <p><strong>Use Cases:</strong> Warehousing & Fulfillment Centers, Courier & Postal Services, Smart Manufacturing, and Agricultural Logistics.</p>
+                            
+                            <div class="modal-external-links" style="margin-top: 24px;">
+                                <a href="https://github.com/TheSh0man/Dimension-X" target="_blank" class="btn primary-btn" onclick="event.stopPropagation();"><i class="fab fa-github"></i> View Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 1: Excel Data Analysis -->
                 <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="100" onclick="openProjectModal(this)">
                     <div class="project-image">
